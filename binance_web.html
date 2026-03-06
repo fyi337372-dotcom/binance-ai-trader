@@ -88,7 +88,7 @@
         </div>
         
         <div class="search-box">
-            <input type="text" id="coinInput" placeholder="输入币种 (如 BNB, BTC, ETH)" value="BNB">
+            <input type="text" id="coinInput" placeholder="输入币种 回车查询" value="BNB" onkeydown="if(event.key=='Enter')analyze()">
             <button onclick="analyze()">🔍 分析</button>
         </div>
         
