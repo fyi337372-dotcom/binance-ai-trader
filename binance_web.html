@@ -14,171 +14,70 @@
         }
         .container { max-width: 800px; margin: 0 auto; }
         
-        /* Header */
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-        }
+        .header { text-align: center; color: white; margin-bottom: 30px; }
         .header h1 { font-size: 28px; margin-bottom: 8px; }
         .header p { color: #8892b0; font-size: 14px; }
         
-        /* Search Box */
-        .search-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
+        .search-box { display: flex; gap: 10px; margin-bottom: 30px; }
         .search-box input {
-            flex: 1;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            outline: none;
+            flex: 1; padding: 15px 20px; font-size: 16px; border: none;
+            border-radius: 12px; background: rgba(255,255,255,0.1); color: white; outline: none;
         }
         .search-box input::placeholder { color: #8892b0; }
         .search-box button {
-            padding: 15px 30px;
-            font-size: 16px;
-            border: none;
-            border-radius: 12px;
-            background: #f0b90b;
-            color: #000;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s;
+            padding: 15px 30px; font-size: 16px; border: none; border-radius: 12px;
+            background: #f0b90b; color: #000; cursor: pointer; font-weight: bold;
         }
-        .search-box button:hover { transform: scale(1.05); }
         
-        /* Coin Tabs */
-        .coin-tabs {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
+        .coin-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
         .coin-tab {
-            padding: 8px 16px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.1);
-            color: #8892b0;
-            cursor: pointer;
-            border: none;
-            font-size: 14px;
-            transition: all 0.2s;
+            padding: 8px 16px; border-radius: 20px; background: rgba(255,255,255,0.1);
+            color: #8892b0; cursor: pointer; border: none; font-size: 14px;
         }
-        .coin-tab:hover, .coin-tab.active {
-            background: #f0b90b;
-            color: #000;
-        }
+        .coin-tab:hover, .coin-tab.active { background: #f0b90b; color: #000; }
         
-        /* Price Card */
         .price-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px;
+            margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);
         }
-        .price-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+        .price-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .coin-name { color: white; font-size: 24px; font-weight: bold; }
         .coin-price { color: #f0b90b; font-size: 36px; font-weight: bold; }
-        .price-change {
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: bold;
-        }
+        .price-change { padding: 6px 12px; border-radius: 8px; font-size: 14px; font-weight: bold; }
         .price-change.up { background: rgba(0,200,100,0.2); color: #00c864; }
         .price-change.down { background: rgba(255,100,100,0.2); color: #ff6464; }
         
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        .stat-item {
-            background: rgba(255,255,255,0.05);
-            padding: 12px;
-            border-radius: 10px;
-            text-align: center;
-        }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+        .stat-item { background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px; text-align: center; }
         .stat-label { color: #8892b0; font-size: 12px; margin-bottom: 4px; }
         .stat-value { color: white; font-size: 16px; font-weight: bold; }
         
-        /* Signal Card */
         .signal-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px;
+            margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);
         }
         .signal-title { color: #8892b0; font-size: 14px; margin-bottom: 16px; }
         
-        .recommendation {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 16px;
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-        }
+        .recommendation { font-size: 24px; font-weight: bold; margin-bottom: 16px; padding: 16px; border-radius: 12px; text-align: center; }
         .recommendation.strong-buy { background: rgba(0,200,100,0.2); color: #00c864; }
         .recommendation.buy { background: rgba(0,200,100,0.1); color: #4cd964; }
         .recommendation.neutral { background: rgba(255,255,255,0.1); color: #8892b0; }
         .recommendation.sell { background: rgba(255,100,100,0.1); color: #ff6b6b; }
         .recommendation.strong-sell { background: rgba(255,100,100,0.2); color: #ff6464; }
         
-        /* Indicators */
         .indicators { display: flex; flex-wrap: wrap; gap: 8px; }
-        .indicator {
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 13px;
-            background: rgba(255,255,255,0.08);
-            color: #ccc;
-        }
+        .indicator { padding: 8px 14px; border-radius: 8px; font-size: 13px; background: rgba(255,255,255,0.08); color: #ccc; }
         .indicator.buy { background: rgba(0,200,100,0.15); color: #4cd964; }
         .indicator.sell { background: rgba(255,100,100,0.15); color: #ff6b6b; }
         
-        /* Buy Button */
-        .buy-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 20px;
-        }
-        .buy-btn {
-            padding: 16px;
-            border-radius: 12px;
-            border: none;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s;
-            text-decoration: none;
-            text-align: center;
-        }
-        .buy-btn:hover { transform: scale(1.02); }
+        .buy-section { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .buy-btn { padding: 16px; border-radius: 12px; border: none; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; text-align: center; }
         .buy-btn.long { background: #00c864; color: white; }
         .buy-btn.short { background: #ff6464; color: white; }
         
-        /* Loading */
         .loading { text-align: center; color: #8892b0; padding: 40px; }
-        
-        /* Hidden */
         .hidden { display: none; }
+        .error { color: #ff6464; text-align: center; padding: 20px; }
     </style>
 </head>
 <body>
@@ -201,12 +100,16 @@
             <button class="coin-tab" onclick="setCoin('XRP')">XRP</button>
             <button class="coin-tab" onclick="setCoin('DOGE')">DOGE</button>
             <button class="coin-tab" onclick="setCoin('PEPE')">PEPE</button>
+            <button class="coin-tab" onclick="setCoin('SHIB')">SHIB</button>
+            <button class="coin-tab" onclick="setCoin('TRX')">TRX</button>
+            <button class="coin-tab" onclick="setCoin('ADA')">ADA</button>
+            <button class="coin-tab" onclick="setCoin('AVAX')">AVAX</button>
         </div>
         
         <div id="loading" class="loading hidden">加载中...</div>
+        <div id="error" class="error hidden"></div>
         
         <div id="result" class="hidden">
-            <!-- Price Card -->
             <div class="price-card">
                 <div class="price-header">
                     <div>
@@ -218,32 +121,17 @@
                 <div class="price-change" id="priceChange">-0.83%</div>
                 
                 <div class="stats-grid" style="margin-top:20px">
-                    <div class="stat-item">
-                        <div class="stat-label">24h最高</div>
-                        <div class="stat-value" id="highPrice">$665.42</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">24h最低</div>
-                        <div class="stat-value" id="lowPrice">$645.53</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">24h交易额</div>
-                        <div class="stat-value" id="volume">78.5M</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">MA20</div>
-                        <div class="stat-value" id="ma20">$652.62</div>
-                    </div>
+                    <div class="stat-item"><div class="stat-label">24h最高</div><div class="stat-value" id="highPrice">$665.42</div></div>
+                    <div class="stat-item"><div class="stat-label">24h最低</div><div class="stat-value" id="lowPrice">$645.53</div></div>
+                    <div class="stat-item"><div class="stat-label">24h交易额</div><div class="stat-value" id="volume">78.5M</div></div>
+                    <div class="stat-item"><div class="stat-label">MA20</div><div class="stat-value" id="ma20">$652.62</div></div>
                 </div>
             </div>
             
-            <!-- Signal Card -->
             <div class="signal-card">
                 <div class="signal-title">📊 技术分析信号</div>
                 <div class="recommendation" id="recommendation">观望 ⚪</div>
-                <div class="indicators" id="indicators">
-                    <span class="indicator">RSI中性</span>
-                </div>
+                <div class="indicators" id="indicators"><span class="indicator">RSI中性</span></div>
                 
                 <div class="buy-section">
                     <a href="#" target="_blank" class="buy-btn long" id="buyLong">📈 做多</a>
@@ -254,6 +142,8 @@
     </div>
     
     <script>
+        // Use CORS proxy
+        const PROXY = 'https://corsproxy.io/?';
         const BASE_URL = 'https://api.binance.com/api/v3';
         
         function setCoin(coin) {
@@ -270,16 +160,24 @@
             
             document.getElementById('loading').classList.remove('hidden');
             document.getElementById('result').classList.add('hidden');
+            document.getElementById('error').classList.add('hidden');
             
             try {
-                // Get 24hr stats
                 const [statsRes, klinesRes] = await Promise.all([
-                    fetch(`${BASE_URL}/ticker/24hr?symbol=${symbol}`),
-                    fetch(`${BASE_URL}/klines?symbol=${symbol}&interval=1h&limit=60`)
+                    fetch(PROXY + encodeURIComponent(`${BASE_URL}/ticker/24hr?symbol=${symbol}`)),
+                    fetch(PROXY + encodeURIComponent(`${BASE_URL}/klines?symbol=${symbol}&interval=1h&limit=60`))
                 ]);
+                
+                if (!statsRes.ok || !klinesRes.ok) {
+                    throw new Error('API请求失败，请检查币种是否正确');
+                }
                 
                 const stats = await statsRes.json();
                 const klines = await klinesRes.json();
+                
+                if (stats.code || klines.code) {
+                    throw new Error(stats.msg || klines.msg || '币种不存在');
+                }
                 
                 const price = parseFloat(stats.lastPrice);
                 const change = parseFloat(stats.priceChangePercent);
@@ -287,12 +185,10 @@
                 const low = parseFloat(stats.lowPrice);
                 const volume = parseFloat(stats.quoteVolume);
                 
-                // Calculate indicators
                 const closes = klines.map(k => parseFloat(k[4]));
                 const ma20 = calculateMA(closes, 20);
                 const rsi = calculateRSI(closes);
                 
-                // Generate signals
                 let score = 0;
                 let signals = [];
                 
@@ -306,7 +202,6 @@
                 if (change < -3) { signals.push('超跌'); score += 1; }
                 else if (change > 3) { signals.push('超涨'); score -= 1; }
                 
-                // Recommendation
                 let rec = '观望';
                 let recClass = 'neutral';
                 if (score >= 2) { rec = '强烈买入 📈📈'; recClass = 'strong-buy'; }
@@ -314,33 +209,29 @@
                 else if (score == -1) { rec = '轻度卖出 🔴'; recClass = 'sell'; }
                 else if (score <= -2) { rec = '强烈卖出 📉📉'; recClass = 'strong-sell'; }
                 
-                // Update UI
                 document.getElementById('coinName').textContent = symbol;
-                document.getElementById('coinPrice').textContent = '$' + price.toFixed(2);
+                document.getElementById('coinPrice').textContent = '$' + price.toFixed(price < 1 ? 6 : 2);
                 
                 const changeEl = document.getElementById('priceChange');
                 changeEl.textContent = (change >= 0 ? '+' : '') + change.toFixed(2) + '%';
                 changeEl.className = 'price-change ' + (change >= 0 ? 'up' : 'down');
                 
-                document.getElementById('highPrice').textContent = '$' + high.toFixed(2);
-                document.getElementById('lowPrice').textContent = '$' + low.toFixed(2);
+                document.getElementById('highPrice').textContent = '$' + high.toFixed(high < 1 ? 6 : 2);
+                document.getElementById('lowPrice').textContent = '$' + low.toFixed(low < 1 ? 6 : 2);
                 document.getElementById('volume').textContent = (volume/1e6).toFixed(1) + 'M';
-                document.getElementById('ma20').textContent = '$' + ma20.toFixed(2);
+                document.getElementById('ma20').textContent = '$' + ma20.toFixed(ma20 < 1 ? 6 : 2);
                 
                 document.getElementById('recommendation').textContent = rec;
                 document.getElementById('recommendation').className = 'recommendation ' + recClass;
                 
                 const indContainer = document.getElementById('indicators');
                 indContainer.innerHTML = signals.map(s => {
-                    const isBuy = s.includes('超卖') || s.includes('买') || s.includes('站上');
-                    const isSell = s.includes('超卖') || s.includes('卖') || s.includes('跌破');
                     let cls = '';
-                    if (isBuy) cls = 'buy';
-                    else if (isSell) cls = 'sell';
+                    if (s.includes('超卖') || s.includes('买') || s.includes('站上')) cls = 'buy';
+                    else if (s.includes('超买') || s.includes('卖') || s.includes('跌破')) cls = 'sell';
                     return `<span class="indicator ${cls}">${s}</span>`;
                 }).join('');
                 
-                // Buy links
                 const coin = symbol.replace('USDT', '');
                 document.getElementById('buyLong').href = `https://www.binance.com/zh-CN/trade/${coin}_USDT?type=spot`;
                 document.getElementById('buyShort').href = `https://www.binance.com/zh-CN/trade/${coin}_USDT?type=spot`;
@@ -349,8 +240,9 @@
                 document.getElementById('result').classList.remove('hidden');
                 
             } catch (e) {
-                alert('获取数据失败: ' + e.message);
                 document.getElementById('loading').classList.add('hidden');
+                document.getElementById('error').textContent = '❌ ' + (e.message || '获取数据失败，请检查币种名称是否正确');
+                document.getElementById('error').classList.remove('hidden');
             }
         }
         
@@ -373,7 +265,6 @@
             return 100 - (100 / (1 + avgGain/avgLoss));
         }
         
-        // Load BNB by default
         analyze();
     </script>
 </body>
