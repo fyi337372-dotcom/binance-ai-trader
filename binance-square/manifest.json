@@ -1,0 +1,12 @@
+{
+  "name": "post_to_binance_square",
+  "version": "1.0.0",
+  "description": "Post content to Binance Square",
+  "parameters": {
+    "content": {
+      "type": "string",
+      "description": "The content to post to Binance Square"
+    }
+  },
+  "command": "python3 square_post.py \"{{content}}\""
+}
