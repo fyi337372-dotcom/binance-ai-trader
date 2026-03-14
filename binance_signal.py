@@ -5,13 +5,24 @@ Binance AI Trading Signal Tool
 """
 
 import requests
+import urllib.parse
 
+# CORS proxy to bypass Binance API restrictions in certain regions
+PROXY = 'https://api.codetabs.com/v1/proxy?quest='
 BASE_URL = 'https://api.binance.com/api/v3'
+
+def make_request(endpoint, params=None):
+    """通过proxy发送请求"""
+    target_url = BASE_URL + endpoint
+    if params:
+        target_url += '?' + urllib.parse.urlencode(params)
+    proxy_url = PROXY + urllib.parse.quote(target_url)
+    r = requests.get(proxy_url, timeout=30)
+    return r.json()
 
 def get_24hr_stats(symbol):
     """获取24小时行情统计"""
-    r = requests.get(f'{BASE_URL}/ticker/24hr', params={'symbol': symbol})
-    data = r.json()
+    data = make_request('/ticker/24hr', {'symbol': symbol})
     return {
         'price': float(data['lastPrice']),
         'change_pct': float(data['priceChangePercent']),
@@ -22,10 +33,12 @@ def get_24hr_stats(symbol):
 
 def get_klines(symbol, interval='1h', limit=60):
     """获取K线数据"""
-    r = requests.get(f'{BASE_URL}/klines', params={
-        'symbol': symbol, 'interval': interval, 'limit': limit
+    data = make_request('/klines', {
+        'symbol': symbol, 
+        'interval': interval, 
+        'limit': limit
     })
-    return [float(k[4]) for k in r.json()]
+    return [float(k[4]) for k in data]
 
 def calculate_ma(prices, period=20):
     """计算移动平均线"""
