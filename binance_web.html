@@ -10,12 +10,15 @@
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh; padding: 20px;
+            min-height: 100vh;
+            padding: 20px;
         }
         .container { max-width: 800px; margin: 0 auto; }
+        
         .header { text-align: center; color: white; margin-bottom: 30px; }
         .header h1 { font-size: 28px; margin-bottom: 8px; }
         .header p { color: #8892b0; font-size: 14px; }
+        
         .search-box { display: flex; gap: 10px; margin-bottom: 30px; }
         .search-box input {
             flex: 1; padding: 15px 20px; font-size: 16px; border: none;
@@ -26,12 +29,14 @@
             padding: 15px 30px; font-size: 16px; border: none; border-radius: 12px;
             background: #f0b90b; color: #000; cursor: pointer; font-weight: bold;
         }
+        
         .coin-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
         .coin-tab {
             padding: 8px 16px; border-radius: 20px; background: rgba(255,255,255,0.1);
             color: #8892b0; cursor: pointer; border: none; font-size: 14px;
         }
         .coin-tab:hover, .coin-tab.active { background: #f0b90b; color: #000; }
+        
         .price-card {
             background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px;
             margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);
@@ -42,29 +47,35 @@
         .price-change { padding: 6px 12px; border-radius: 8px; font-size: 14px; font-weight: bold; }
         .price-change.up { background: rgba(0,200,100,0.2); color: #00c864; }
         .price-change.down { background: rgba(255,100,100,0.2); color: #ff6464; }
+        
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
         .stat-item { background: rgba(255,255,255,0.05); padding: 12px; border-radius: 10px; text-align: center; }
         .stat-label { color: #8892b0; font-size: 12px; margin-bottom: 4px; }
         .stat-value { color: white; font-size: 16px; font-weight: bold; }
+        
         .signal-card {
             background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px;
             margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);
         }
         .signal-title { color: #8892b0; font-size: 14px; margin-bottom: 16px; }
+        
         .recommendation { font-size: 24px; font-weight: bold; margin-bottom: 16px; padding: 16px; border-radius: 12px; text-align: center; }
         .recommendation.strong-buy { background: rgba(0,200,100,0.2); color: #00c864; }
         .recommendation.buy { background: rgba(0,200,100,0.1); color: #4cd964; }
         .recommendation.neutral { background: rgba(255,255,255,0.1); color: #8892b0; }
         .recommendation.sell { background: rgba(255,100,100,0.1); color: #ff6b6b; }
         .recommendation.strong-sell { background: rgba(255,100,100,0.2); color: #ff6464; }
+        
         .indicators { display: flex; flex-wrap: wrap; gap: 8px; }
         .indicator { padding: 8px 14px; border-radius: 8px; font-size: 13px; background: rgba(255,255,255,0.08); color: #ccc; }
         .indicator.buy { background: rgba(0,200,100,0.15); color: #4cd964; }
         .indicator.sell { background: rgba(255,100,100,0.15); color: #ff6b6b; }
+        
         .buy-section { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         .buy-btn { padding: 16px; border-radius: 12px; border: none; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; text-align: center; }
         .buy-btn.long { background: #00c864; color: white; }
         .buy-btn.short { background: #ff6464; color: white; }
+        
         .loading { text-align: center; color: #8892b0; padding: 40px; }
         .hidden { display: none; }
         .error { color: #ff6464; text-align: center; padding: 20px; }
@@ -76,46 +87,53 @@
             <h1>🤖 AI 交易信号助手</h1>
             <p>基于技术分析的智能交易建议</p>
         </div>
+        
         <div class="search-box">
-            <input type="text" id="coinInput" placeholder="输入币种 回车查询" value="bitcoin" onkeydown="if(event.key=='Enter')analyze()">
+            <input type="text" id="coinInput" placeholder="输入币种 回车查询" value="BNB" onkeydown="if(event.key=='Enter')analyze()">
             <button onclick="analyze()">🔍 分析</button>
         </div>
+        
         <div class="coin-tabs">
-            <button class="coin-tab active" onclick="setCoin('bitcoin')">BTC</button>
-            <button class="coin-tab" onclick="setCoin('ethereum')">ETH</button>
-            <button class="coin-tab" onclick="setCoin('binancecoin')">BNB</button>
-            <button class="coin-tab" onclick="setCoin('solana')">SOL</button>
-            <button class="coin-tab" onclick="setCoin('ripple')">XRP</button>
-            <button class="coin-tab" onclick="setCoin('dogecoin')">DOGE</button>
-            <button class="coin-tab" onclick="setCoin('pepe')">PEPE</button>
-            <button class="coin-tab" onclick="setCoin('shiba-inu')">SHIB</button>
-            <button class="coin-tab" onclick="setCoin('tron')">TRX</button>
-            <button class="coin-tab" onclick="setCoin('cardano')">ADA</button>
-            <button class="coin-tab" onclick="setCoin('avalanche-2')">AVAX</button>
+            <button class="coin-tab active" onclick="setCoin('BNB')">BNB</button>
+            <button class="coin-tab" onclick="setCoin('BTC')">BTC</button>
+            <button class="coin-tab" onclick="setCoin('ETH')">ETH</button>
+            <button class="coin-tab" onclick="setCoin('SOL')">SOL</button>
+            <button class="coin-tab" onclick="setCoin('XRP')">XRP</button>
+            <button class="coin-tab" onclick="setCoin('DOGE')">DOGE</button>
+            <button class="coin-tab" onclick="setCoin('PEPE')">PEPE</button>
+            <button class="coin-tab" onclick="setCoin('SHIB')">SHIB</button>
+            <button class="coin-tab" onclick="setCoin('TRX')">TRX</button>
+            <button class="coin-tab" onclick="setCoin('ADA')">ADA</button>
+            <button class="coin-tab" onclick="setCoin('AVAX')">AVAX</button>
         </div>
+        
         <div id="loading" class="loading hidden">加载中...</div>
         <div id="error" class="error hidden"></div>
+        
         <div id="result" class="hidden">
             <div class="price-card">
                 <div class="price-header">
                     <div>
-                        <div class="coin-name" id="coinName">BTC/USDT</div>
-                        <div style="color:#8892b0;font-size:14px">CoinGecko行情</div>
+                        <div class="coin-name" id="coinName">BNB/USDT</div>
+                        <div style="color:#8892b0;font-size:14px">币安现货</div>
                     </div>
-                    <div class="coin-price" id="coinPrice">$65,000</div>
+                    <div class="coin-price" id="coinPrice">$650.58</div>
                 </div>
-                <div class="price-change" id="priceChange">+0.00%</div>
+                <div class="price-change" id="priceChange">-0.83%</div>
+                
                 <div class="stats-grid" style="margin-top:20px">
-                    <div class="stat-item"><div class="stat-label">24h最高</div><div class="stat-value" id="highPrice">$0</div></div>
-                    <div class="stat-item"><div class="stat-label">24h最低</div><div class="stat-value" id="lowPrice">$0</div></div>
-                    <div class="stat-item"><div class="stat-label">24h交易额</div><div class="stat-value" id="volume">$0</div></div>
-                    <div class="stat-item"><div class="stat-label">MA20</div><div class="stat-value" id="ma20">$0</div></div>
+                    <div class="stat-item"><div class="stat-label">24h最高</div><div class="stat-value" id="highPrice">$665.42</div></div>
+                    <div class="stat-item"><div class="stat-label">24h最低</div><div class="stat-value" id="lowPrice">$645.53</div></div>
+                    <div class="stat-item"><div class="stat-label">24h交易额</div><div class="stat-value" id="volume">78.5M</div></div>
+                    <div class="stat-item"><div class="stat-label">MA20</div><div class="stat-value" id="ma20">$652.62</div></div>
                 </div>
             </div>
+            
             <div class="signal-card">
                 <div class="signal-title">📊 技术分析信号</div>
                 <div class="recommendation" id="recommendation">观望 ⚪</div>
-                <div class="indicators" id="indicators"><span class="indicator">分析中...</span></div>
+                <div class="indicators" id="indicators"><span class="indicator">RSI中性</span></div>
+                
                 <div class="buy-section">
                     <a href="#" target="_blank" class="buy-btn long" id="buyLong">📈 做多</a>
                     <a href="#" target="_blank" class="buy-btn short" id="buyShort">📉 做空</a>
@@ -123,39 +141,11 @@
             </div>
         </div>
     </div>
+    
     <script>
-        // CoinGecko API - free and no API key needed
-        const COINGECKO_API = 'https://api.coingecko.com/api/v3';
-        
-        // Map display names to CoinGecko IDs
-        const coinMap = {
-            'bitcoin': 'bitcoin',
-            'ethereum': 'ethereum',
-            'binancecoin': 'binancecoin',
-            'solana': 'solana',
-            'ripple': 'ripple',
-            'dogecoin': 'dogecoin',
-            'pepe': 'pepe',
-            'shiba-inu': 'shiba-inu',
-            'tron': 'tron',
-            'cardano': 'cardano',
-            'avalanche-2': 'avalanche-2'
-        };
-        
-        // Reverse map for display
-        const symbolMap = {
-            'bitcoin': 'BTC',
-            'ethereum': 'ETH',
-            'binancecoin': 'BNB',
-            'solana': 'SOL',
-            'ripple': 'XRP',
-            'dogecoin': 'DOGE',
-            'pepe': 'PEPE',
-            'shiba-inu': 'SHIB',
-            'tron': 'TRX',
-            'cardano': 'ADA',
-            'avalanche-2': 'AVAX'
-        };
+        // Use CORS proxy
+        const PROXY = 'https://corsproxy.io/?';
+        const BASE_URL = 'https://api.binance.com/api/v3';
         
         function setCoin(coin) {
             document.getElementById('coinInput').value = coin;
@@ -165,36 +155,38 @@
         }
         
         async function analyze() {
-            let coin = document.getElementById('coinInput').value.trim().toLowerCase();
-            if (!coin) return;
-            
-            // Try to find the coin ID
-            let coinId = coinMap[coin] || coin;
+            let symbol = document.getElementById('coinInput').value.trim().toUpperCase();
+            if (!symbol) return;
+            if (!symbol.endsWith('USDT')) symbol += 'USDT';
             
             document.getElementById('loading').classList.remove('hidden');
             document.getElementById('result').classList.add('hidden');
             document.getElementById('error').classList.add('hidden');
             
             try {
-                // Get coin data from CoinGecko
-                const url = `${COINGECKO_API}/coins/${coinId}?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=true`;
-                const response = await fetch(url);
+                const [statsRes, klinesRes] = await Promise.all([
+                    fetch(PROXY + encodeURIComponent(`${BASE_URL}/ticker/24hr?symbol=${symbol}`)),
+                    fetch(PROXY + encodeURIComponent(`${BASE_URL}/klines?symbol=${symbol}&interval=1h&limit=60`))
+                ]);
                 
-                if (!response.ok) {
-                    throw new Error('币种不存在或API请求失败');
+                if (!statsRes.ok || !klinesRes.ok) {
+                    throw new Error('API请求失败，请检查币种是否正确');
                 }
                 
-                const data = await response.json();
+                const stats = await statsRes.json();
+                const klines = await klinesRes.json();
                 
-                const price = data.market_data.current_price.usd;
-                const change = data.market_data.price_change_percentage_24h;
-                const high = data.market_data.high_24h.usd;
-                const low = data.market_data.low_24h.usd;
-                const volume = data.market_data.total_volume.usd;
-                const sparkline = data.market_data.sparkline_7d.price;
+                if (stats.code || klines.code) {
+                    throw new Error(stats.msg || klines.msg || '币种不存在');
+                }
                 
-                // Calculate MA20 from sparkline (last 7 days hourly = ~168 points, use last 20)
-                const closes = sparkline.slice(-168).map(p => p);
+                const price = parseFloat(stats.lastPrice);
+                const change = parseFloat(stats.priceChangePercent);
+                const high = parseFloat(stats.highPrice);
+                const low = parseFloat(stats.lowPrice);
+                const volume = parseFloat(stats.quoteVolume);
+                
+                const closes = klines.map(k => parseFloat(k[4]));
                 const ma20 = calculateMA(closes, 20);
                 const rsi = calculateRSI(closes);
                 
@@ -218,18 +210,17 @@
                 else if (score == -1) { rec = '轻度卖出 🔴'; recClass = 'sell'; }
                 else if (score <= -2) { rec = '强烈卖出 📉📉'; recClass = 'strong-sell'; }
                 
-                const displaySymbol = symbolMap[coinId] || coinId.toUpperCase();
-                document.getElementById('coinName').textContent = displaySymbol + '/USD';
-                document.getElementById('coinPrice').textContent = '$' + price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: price < 1 ? 6 : 2});
+                document.getElementById('coinName').textContent = symbol;
+                document.getElementById('coinPrice').textContent = '$' + price.toFixed(price < 1 ? 6 : 2);
                 
                 const changeEl = document.getElementById('priceChange');
                 changeEl.textContent = (change >= 0 ? '+' : '') + change.toFixed(2) + '%';
                 changeEl.className = 'price-change ' + (change >= 0 ? 'up' : 'down');
                 
-                document.getElementById('highPrice').textContent = '$' + high.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: high < 1 ? 6 : 2});
-                document.getElementById('lowPrice').textContent = '$' + low.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: low < 1 ? 6 : 2});
-                document.getElementById('volume').textContent = '$' + (volume/1e9).toFixed(1) + 'B';
-                document.getElementById('ma20').textContent = '$' + ma20.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: ma20 < 1 ? 6 : 2});
+                document.getElementById('highPrice').textContent = '$' + high.toFixed(high < 1 ? 6 : 2);
+                document.getElementById('lowPrice').textContent = '$' + low.toFixed(low < 1 ? 6 : 2);
+                document.getElementById('volume').textContent = (volume/1e6).toFixed(1) + 'M';
+                document.getElementById('ma20').textContent = '$' + ma20.toFixed(ma20 < 1 ? 6 : 2);
                 
                 document.getElementById('recommendation').textContent = rec;
                 document.getElementById('recommendation').className = 'recommendation ' + recClass;
@@ -238,12 +229,13 @@
                 indContainer.innerHTML = signals.map(s => {
                     let cls = '';
                     if (s.includes('超卖') || s.includes('买') || s.includes('站上')) cls = 'buy';
-                    else if (s.includes('超卖') || s.includes('卖') || s.includes('跌破')) cls = 'sell';
+                    else if (s.includes('超买') || s.includes('卖') || s.includes('跌破')) cls = 'sell';
                     return `<span class="indicator ${cls}">${s}</span>`;
                 }).join('');
                 
-                document.getElementById('buyLong').href = `https://www.binance.com/zh-CN/trade/${displaySymbol}_USDT?type=spot`;
-                document.getElementById('buyShort').href = `https://www.binance.com/zh-CN/trade/${displaySymbol}_USDT?type=spot`;
+                const coin = symbol.replace('USDT', '');
+                document.getElementById('buyLong').href = `https://www.binance.com/zh-CN/trade/${coin}_USDT?type=spot`;
+                document.getElementById('buyShort').href = `https://www.binance.com/zh-CN/trade/${coin}_USDT?type=spot`;
                 
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('result').classList.remove('hidden');
