@@ -1,6 +1,6 @@
 {
   "name": "binance-trading-signal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Binance Trading Signal Assistant - AI-powered technical analysis tool for cryptocurrency trading pairs",
   "author": "AI Trading Team",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "technical analysis"
   ],
   "endpoints": {
+    "proxy": "https://api.codetabs.com/v1/proxy?quest=",
     "base": "https://api.binance.com/api/v3",
     "ticker": "/ticker/24hr",
     "klines": "/klines"
@@ -75,7 +76,7 @@
     }
   },
   "notes": [
-    "Uses public Binance API - no API key required",
+    "Uses CORS proxy (codetabs.com) to access Binance API - works in restricted regions",
     "All prices in USDT",
     "For educational purposes only",
     "Not financial advice"
