@@ -1,0 +1,18 @@
+[
+  {
+    "token_id": "8441400852834915183759801017793514978104486628517653995211751018945988243154",
+    "question": "Will GTA VI be released before June 2026?",
+    "total_size": 100,
+    "avg_cost": 0.022,
+    "current_price": 0.023,
+    "note": "Position open, ROI +4.55%, spread too wide to sell efficiently"
+  },
+  {
+    "token_id": "107726477169398763643300346937218981578070170096670253959564188912978677384086",
+    "question": "Will Bitboy be found guilty?",
+    "total_size": 100,
+    "avg_cost": 0.012,
+    "current_price": null,
+    "note": "Mkt illiquid, sell failed with 400 error - may need manual intervention"
+  }
+]
